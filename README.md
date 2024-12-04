@@ -321,7 +321,8 @@ prop_cleaned <- prop %>%
   filter(!is.na(vote)) %>%
   # 仙台市太白区、静岡市葵区と清水区、愛知県瀬戸市などでほかの市や区と合同で計上しているという注釈を削除
   mutate(city=ifelse((pref=="大分県" & city=="佐伯氏"),"佐伯市",city)) %>% # 大分県佐伯市の表記ミス
-  mutate(city=ifelse(city=="栗国村","粟国村",city)) # 沖縄県粟国村の表記ミス
+  mutate(city=ifelse(city=="栗国村","粟国村",city)) %>%  # 沖縄県粟国村の表記ミス
+  mutate(city=stringi::stri_trans_general(city, "Fullwidth-Halfwidth"))
 
 prop_cleaned <- prop_cleaned %>% 
     filter(party!="得票数計") %>% # 各開票区における得票数計のデータが誤っているものが多数あったので、自力で計算
