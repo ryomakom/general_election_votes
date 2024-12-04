@@ -8,6 +8,9 @@
 
 総務省がウェブサイトで[公表](https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin/ichiran.html)している衆院選の結果（2009年以降の6回分）について、まとめてダウンロードしてクリーニングしてから出力するコードでございます。小選挙区と比例区の二つがあります。
 
+![](img/MIC.jpg)
+
+
 まず必要なパッケージを取得。
 ```{r library, warning=FALSE,message=FALSE}
 library(rvest)
@@ -366,7 +369,7 @@ jp_pref %>%
   labs(title="2009年衆院選の公明党得票シェア")
 
 ```
-![](img/2009.jpg)
+![](img/map2009.jpg)
 
 
 ```{r test}
@@ -386,7 +389,7 @@ jp_pref %>%
   labs(title="2012年衆院選の公明党得票シェア")
 ```
 
-![](img/2012.jpg)
+![](img/map2012.jpg)
 
 ```{r test}
 
@@ -404,7 +407,7 @@ jp_pref %>%
            expand = FALSE) +
   labs(title="2014年衆院選の公明党得票シェア")
 ```
-![](img/2014.jpg)
+![](img/map2014.jpg)
 
 
 ```{r test}
@@ -424,7 +427,7 @@ jp_pref %>%
   labs(title="2017年衆院選の公明党得票シェア")
 ```
 
-![](img/2017.jpg)
+![](img/map2017.jpg)
 
 ```{r test}
 
@@ -442,7 +445,7 @@ jp_pref %>%
            expand = FALSE) +
   labs(title="2021年衆院選の公明党得票シェア")
 ```
-![](img/2021.jpg)
+![](img/map2021.jpg)
 
 
 ```{r test}
@@ -462,6 +465,6 @@ jp_pref %>%
   labs(title="2024年衆院選の公明党得票シェア")
 
 ```
-![](img/2024.jpg)
+![](img/map2024.jpg)
 
 以上。
