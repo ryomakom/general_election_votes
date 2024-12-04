@@ -349,8 +349,7 @@ komei_ratio <- prop_cleaned %>%
   mutate(rkomei=公明党/得票数計) %>%
   select(year,pref,rkomei) %>%
   mutate(year=str_c("y",year)) %>%
-  pivot_wider(names_from = year,values_from = rkomei) %>%
-  mutate(ratio=y2021/y2009)
+  pivot_wider(names_from = year,values_from = rkomei)
 
 jp_pref %>%
   left_join(komei_ratio %>%
@@ -366,6 +365,12 @@ jp_pref %>%
            expand = FALSE) +
   labs(title="2009年衆院選の公明党得票シェア")
 
+```
+![](img/2009.jpg)
+
+
+```{r test}
+
 jp_pref %>%
   left_join(komei_ratio %>%
               rename(name=pref)) %>%
@@ -379,6 +384,11 @@ jp_pref %>%
            crs = st_crs("+proj=longlat +datum=WGS84 +no_defs"), 
            expand = FALSE) +
   labs(title="2012年衆院選の公明党得票シェア")
+```
+
+![](img/2012.jpg)
+
+```{r test}
 
 jp_pref %>%
   left_join(komei_ratio %>%
@@ -393,6 +403,11 @@ jp_pref %>%
            crs = st_crs("+proj=longlat +datum=WGS84 +no_defs"), 
            expand = FALSE) +
   labs(title="2014年衆院選の公明党得票シェア")
+```
+![](img/2014.jpg)
+
+
+```{r test}
 
 jp_pref %>%
   left_join(komei_ratio %>%
@@ -407,6 +422,11 @@ jp_pref %>%
            crs = st_crs("+proj=longlat +datum=WGS84 +no_defs"), 
            expand = FALSE) +
   labs(title="2017年衆院選の公明党得票シェア")
+```
+
+![](img/2017.jpg)
+
+```{r test}
 
 jp_pref %>%
   left_join(komei_ratio %>%
@@ -421,6 +441,11 @@ jp_pref %>%
            crs = st_crs("+proj=longlat +datum=WGS84 +no_defs"), 
            expand = FALSE) +
   labs(title="2021年衆院選の公明党得票シェア")
+```
+![](img/2021.jpg)
+
+
+```{r test}
 
 jp_pref %>%
   left_join(komei_ratio %>%
@@ -436,5 +461,7 @@ jp_pref %>%
            expand = FALSE) +
   labs(title="2024年衆院選の公明党得票シェア")
 
-
 ```
+![](img/2024.jpg)
+
+以上。
