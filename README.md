@@ -1,13 +1,10 @@
-# general_election_votes
-衆院選の開票結果を総務省のサイトから取得して整形するコードです
+# 衆院選の開票結果を整形
 
 
----
-title: "衆院選データ収集"
-output: html_document
-date: "2024-12-04"
-author: Ryoma Komiyama
----
+<div align="right">
+朝日新聞デジタル企画報道部　小宮山亮磨  <br>
+@ryomakom  <br>
+2024/12/04  </div>
 
 総務省がウェブサイトで[公表](https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin/ichiran.html)している衆院選の結果（2009年以降の6回分）について、まとめてダウンロードしてクリーニングしてから出力するコードでございます。小選挙区と比例区の二つがあります。
 
