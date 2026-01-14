@@ -198,9 +198,11 @@ for (file_name in files24) {
                             update_column_names() %>%
                             rename(city = 候補者名) %>%
                             mutate_all(as.character) %>%
-                            pivot_longer(cols = c(-city), names_to = "cand", values_to = "vote") %>%
-                            filter(!is.na(city), !str_detect(cand, "NA")) %>%
+                            pivot_longer(cols = c(-city),
+                                         names_to = "cand", values_to = "vote") %>%
+                            filter(!is.na(city), !str_detect(cand, "得票数計")) %>%
                             separate(cand, into = c("cand", "party"), sep = "_") %>%
+                            mutate(party=if_else(party=="NA","無所属",party)) %>%
                             mutate(dist = .x) %>%
                             mutate(year = 2024) %>%
                             select(year, dist, city, party, cand, vote))
@@ -223,7 +225,6 @@ for (file_name in files24) {
     }
   })
 }
-
 ```
 
 
